@@ -6,4 +6,4 @@ def read_all() -> str:
 
 
 def read_lines() -> list[str]:
-    return [line.strip() for line in sys.stdin.readlines()]
+    return [line.strip() for line in sys.stdin.readlines() if line.strip()]
