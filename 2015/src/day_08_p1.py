@@ -1,0 +1,6 @@
+from libs import io
+
+input = io.read_lines()
+ans = sum(len(x) for x in input)
+ans -= sum(len(eval(x)) for x in input)
+print(ans)
