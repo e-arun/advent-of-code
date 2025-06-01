@@ -4,7 +4,7 @@ version = "0.1.0"
 description = "Advent of code solutions"
 readme = "README.md"
 requires-python = ">=3.12"
-dependencies = []
+dependencies = ["pydantic"]
 
 [build-system]
 requires = ["hatchling"]
