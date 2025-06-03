@@ -1,0 +1,14 @@
+{
+  "name": "aoc",
+  "private": true,
+  "devDependencies": {
+    "@biomejs/biome": "^1.9.4",
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "scripts": {
+    "fmt": "biome format --write src"
+  }
+}
