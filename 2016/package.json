@@ -9,6 +9,7 @@
     "typescript": "^5"
   },
   "scripts": {
-    "fmt": "biome format --write src"
+    "fmt": "biome format --write src",
+    "lint": "biome lint src"
   }
 }
