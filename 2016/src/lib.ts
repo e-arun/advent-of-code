@@ -6,13 +6,16 @@ export const sum = (arr: number[]) => {
 	return sum;
 };
 
-export const batched = <T>(arr: T[], n: number): T[][] => {
-	const batchedArr: T[][] = [];
+export function batched(arr: string, n: number): string[];
+export function batched<T>(arr: T[], n: number): T[][];
+
+export function batched<T>(arr: string | T[], n: number) {
+	const batchedArr = [];
 	for (let i = 0; i + n <= arr.length; i += n) {
 		batchedArr.push(arr.slice(i, i + n));
 	}
 	return batchedArr;
-};
+}
 
 export const windows: {
 	<T>(arr: T[], n: number): T[][];
