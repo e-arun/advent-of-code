@@ -5,3 +5,11 @@ export const sum = (arr: number[]) => {
 	}
 	return sum;
 };
+
+export const batched = <T>(arr: T[], n: number): T[][] => {
+	const batchedArr: T[][] = [];
+	for (let i = 0; i + n <= arr.length; i += n) {
+		batchedArr.push(arr.slice(i, i + n));
+	}
+	return batchedArr;
+};
