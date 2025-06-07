@@ -28,3 +28,33 @@ export const windows: {
 	}
 	return windowArr;
 };
+
+export function combinations<T>(arr: T[], n: number): T[][] {
+	if (n > arr.length) {
+		throw new Error("n > arr.length");
+	}
+
+	const combArr: T[][] = [];
+
+	const idxArr = [...Array(n).keys()];
+	combArr.push(idxArr.map((idx) => arr[idx]));
+
+	while (true) {
+		let i = n - 1;
+		for (; i >= 0; i--) {
+			if (idxArr[i] !== i + arr.length - n) {
+				break;
+			}
+		}
+		if (i < 0) {
+			break;
+		}
+		idxArr[i] += 1;
+		for (let j = i + 1; j < idxArr.length; j++) {
+			idxArr[j] = idxArr[j - 1] + 1;
+		}
+		combArr.push(idxArr.map((idx) => arr[idx]));
+	}
+
+	return combArr;
+}
