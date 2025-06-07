@@ -58,3 +58,9 @@ export function combinations<T>(arr: T[], n: number): T[][] {
 
 	return combArr;
 }
+
+export const md5 = (key: string): string => {
+	const hasher = new Bun.CryptoHasher("md5");
+	hasher.update(key);
+	return hasher.digest("hex");
+};
