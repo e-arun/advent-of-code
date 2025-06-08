@@ -64,3 +64,19 @@ export const md5 = (key: string): string => {
 	hasher.update(key);
 	return hasher.digest("hex");
 };
+
+export function permutations<T>(arr: T[]): T[][] {
+	let permutations: T[][] = [[]];
+	for (const item of arr) {
+		const newPermutations = [];
+		for (const oldArr of permutations) {
+			for (let i = 0; i <= oldArr.length; i++) {
+				const newArr = [...oldArr];
+				newArr.splice(i, 0, item);
+				newPermutations.push(newArr);
+			}
+		}
+		permutations = newPermutations;
+	}
+	return permutations;
+}
