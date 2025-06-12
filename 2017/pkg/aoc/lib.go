@@ -1,9 +1,13 @@
 package aoc
 
 import (
+	"bytes"
 	"cmp"
 	"fmt"
+	"io"
+	"os"
 	"strconv"
+	"strings"
 )
 
 func ArrMax[T cmp.Ordered](arr []T) T {
@@ -40,4 +44,26 @@ func AbsInt(x int) int {
 		return -x
 	}
 	return x
+}
+
+func ReadAll() string {
+	input, err := io.ReadAll(os.Stdin)
+	if err != nil {
+		panic(err)
+	}
+	input = bytes.TrimSpace(input)
+	return string(input)
+}
+
+func ReadAllLines() []string {
+	input := ReadAll()
+	return strings.Split(input, "\n")
+}
+
+func Atoi(x string) int {
+	val, err := strconv.Atoi(x)
+	if err != nil {
+		panic(err)
+	}
+	return val
 }
