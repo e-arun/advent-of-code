@@ -16,3 +16,5 @@ gleam run -m day_01_p1 < input.txt
 ```
 
 You can get inputs from [AoC 2025](https://adventofcode.com/2025).
+
+> NOTE: This year only has 12 problems
